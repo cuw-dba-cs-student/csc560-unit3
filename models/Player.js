@@ -21,5 +21,7 @@ const playerSchema = mongoose.Schema(
     },
     {collection: 'roster'});
 
-// Mongoose automatically looks for the plural, lowercased version of your model name
+// Mongoose will automatically looks for the plural, lowercased version of the model name
+// that is why I set the "collection" option for the playerSchema above. Everything kept ending 
+// up in a "Rosters" schema until I read the documentation and learneda about this behavior.
 module.exports = mongoose.model('Roster',playerSchema);
