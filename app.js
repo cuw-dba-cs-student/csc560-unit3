@@ -33,13 +33,9 @@ app.use('/rosterByAge',rosterByAgeRouter);
 app.use('/rosterByAgeDesc',rosterByAgeDescRouter);
 app.use('/updatePlayer',updatePlayerRouter);
 
+// Auth would be good to do in the future. 
+//app.use(auth);
 
-//app.use(auth);n
-
-// Route Handlers
-app.get('/', (req, res) => {
-    res.send('This is the homepage');
-});
 
 
 //Connect to MongoDB
@@ -51,7 +47,8 @@ mongoose.connect(process.env.MONGODB_URI, {
     console.log('connected to MongoDB');
 });
 
-mongoose.set('debug', true);
+// Uncomment to debug.
+//mongoose.set('debug', true);
 
 // listen on port 3000
 app.listen(3000);
